@@ -10,10 +10,6 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 # Lab 2 — JTBD Project Analysis / Dùng JTBD để soi lại dự án nhóm
 
 **Tên dự án / sản phẩm:** _______________  
-**Người làm / đại diện nhóm:** _______________  
-**Nhóm dự án:** _______________  
-**Bàn / nhóm bàn:** _______________  
-**Ngày:** ____________
 
 > Đây là **file duy nhất** của Lab 2.  
 > File này đồng thời đóng vai trò:

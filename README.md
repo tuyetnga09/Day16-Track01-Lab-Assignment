@@ -19,7 +19,7 @@ Quy tắc xuyên suốt: **không có bằng chứng = không có nhận định
 Trong repo nộp bài, bạn chỉ cần dùng 3 file:
 
 ```text
-Day16-MãHọcViên/
+Day16-MãHọcViên-HọVàTên/
 ├── README.md
 └── worksheet/
     ├── 01-case-analysis.md
@@ -42,8 +42,8 @@ Ngoài 3 file trong repo, ở **Lab 2** bạn cần mở thêm:
 
 ### Tên kho GitHub
 
-Cú pháp: **`Day16-MãHọcViên`**  
-Ví dụ: `Day16-A20-00045`
+Cú pháp: **`Day16-MãHọcViên-HọVàTên`**  
+Ví dụ: `Day16-A20-00045-NguyenVanA`
 
 Mỗi học viên có 1 kho công khai riêng.
 
@@ -57,12 +57,12 @@ Mỗi học viên có 1 kho công khai riêng.
 ### README mẫu ở repo nộp bài
 
 ```markdown
-# Day 16 — A20-XXXXX [Họ tên]
+# Day16-A20-XXXXX-HoVaTen
 
 ## Thông tin học viên
 
 - Mã học viên: A20-XXXXX
-- Họ tên: [...]
+- Họ tên: Nguyễn Văn A
 - Track: AI Product Strategy
 
 ## File nộp
