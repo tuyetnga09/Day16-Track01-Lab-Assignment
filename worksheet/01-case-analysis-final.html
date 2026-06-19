@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 1 — Case Analysis — Phạm Thị Tuyết Nga</title>
+<style>
+:root{--ink:#1f2933;--muted:#52606d;--line:#d9e2ec;--accent:#2563eb;--bg:#f7f9fc;--head:#0b2545}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple Color Emoji",sans-serif;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:48px 28px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:40px 44px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+h1{font-size:1.9rem;color:var(--head);margin:0 0 .3em;line-height:1.25}
+h2{font-size:1.35rem;color:var(--head);margin:2em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+h3{font-size:1.1rem;color:#102a43;margin:1.6em 0 .5em}
+p{margin:.7em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid var(--line);margin:1.8em 0}
+blockquote{margin:1em 0;padding:.7em 1.1em;background:#eef4ff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:#243b53}
+table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:.93rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#0b2545;color:#fff;font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:#f4f7fb}
+code{background:#eef1f5;padding:1px 6px;border-radius:5px;font-size:.88em;font-family:"SF Mono",Menlo,Consolas,monospace}
+ul,ol{margin:.6em 0;padding-left:1.5em}
+li{margin:.25em 0}
+em{color:var(--muted)}
+strong{color:#102a43}
+@media print{body{background:#fff}.card{border:none;box-shadow:none;padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<h1>Lab 1 — Case Analysis (bản hoàn thiện)</h1>
+<p><strong>Người làm:</strong> Phạm Thị Tuyết Nga — 2A202600877<br><strong>Track:</strong> AI Product Strategy<br><strong>Ngày:</strong> 18/06/2026<br><strong>Case phân tích:</strong> Nền tảng <em>trung tâm tri thức nội bộ</em> — tập trung tài liệu của tập đoàn + chatbot hỏi-đáp trên kho tài liệu đó, trả lời kèm trích dẫn nguồn rõ ràng.<br><strong>AI shock:</strong> Big Tech bundle tính năng &quot;chat with your documents + citations&quot; ngay vào bộ công cụ doanh nghiệp đã trả tiền (Microsoft 365 Copilot, Google Gemini/NotebookLM, ChatGPT Enterprise).</p>
+<blockquote>Quy tắc: không có bằng chứng = không có nhận định. Các mốc/số dưới đây là sự kiện công khai — cần mở URL gốc xác minh trước khi nộp; chỗ chưa chắc đã đánh dấu ⚠️.</blockquote>
+<hr>
+<h2>Phần 1 — Thu thập thông tin</h2>
+<h3>1.1. Case trước AI</h3>
+<table><thead><tr><th>Hạng mục</th><th>Nội dung</th></tr></thead><tbody><tr><td><strong>Sản phẩm là gì</strong></td><td>Nền tảng trung tâm tri thức nội bộ: gom toàn bộ tài liệu của tập đoàn (quy định, quy trình, hợp đồng, biểu mẫu, tài liệu kỹ thuật) về một nơi + chatbot hỏi-đáp trên chính kho đó, trả lời kèm <strong>trích dẫn nguồn</strong> (chỉ rõ lấy từ tài liệu nào, đoạn nào).</td></tr><tr><td><strong>User là ai</strong></td><td>Nhân viên trong tập đoàn (vận hành, nhân sự, pháp chế, kỹ thuật, CSKH…) cần tra cứu nhanh tài liệu/quy định để làm việc. Người trả tiền là IT / lãnh đạo khối; người dùng cuối là nhân viên.</td></tr><tr><td><strong>Họ trả tiền cho cái gì</strong></td><td>(1) Tìm kiếm <strong>thuận lợi, nhanh</strong> trong núi tài liệu;<br>(2) câu trả lời có <strong>dẫn chứng rõ</strong> để dám tin, dám hành động, giảm rủi ro làm sai quy định;<br>(3) gom tri thức rải rác về một mối, bớt phải hỏi nhau / lục tay.</td></tr><tr><td><strong>Sản phẩm thắng nhờ gì</strong></td><td>Làm được thứ nội bộ khó tự dựng: RAG trên dữ liệu nội bộ + trích dẫn + phân quyền + bảo mật; tìm kiếm <strong>hiểu ngữ nghĩa</strong> tốt hơn hẳn search keyword truyền thống (SharePoint/intranet cũ).</td></tr><tr><td><strong>JTBD lõi</strong></td><td><em>&quot;Giúp tôi tìm đúng thông tin trong kho tài liệu nội bộ thật nhanh, và cho tôi bằng chứng đáng tin để tôi dám hành động ngay.&quot;</em></td></tr></tbody></table>
+<h3>1.2. AI shock — mốc Big Tech ra tính năng tương tự</h3>
+<table><thead><tr><th>Mốc</th><th>Sự kiện</th><th>Vì sao là &quot;shock&quot; với sản phẩm này</th></tr></thead><tbody><tr><td>08/2023</td><td><strong>ChatGPT Enterprise</strong> ra mắt: hỏi-đáp trên dữ liệu công ty + bảo mật doanh nghiệp, không train trên data khách hàng</td><td>Phá lý do &quot;chỉ specialist vendor mới đủ an toàn cho data nội bộ&quot;</td></tr><tr><td>11/2023</td><td><strong>Microsoft 365 Copilot</strong> GA, add-on ~$30/user/tháng trên tập khách hàng M365 sẵn có</td><td>Đối thủ không &quot;bán mới&quot; — chỉ bật switch trên user mình đang phục vụ</td></tr><tr><td>2023 → nay</td><td><strong>Google NotebookLM</strong> + <strong>Gemini trong Workspace</strong>: hỏi đáp trên tài liệu của bạn, <strong>có trích dẫn nguồn</strong></td><td>Đúng y hệt tính năng lõi sản phẩm đang bán, nay đi kèm sẵn</td></tr><tr><td>Liên tục</td><td>RAG / &quot;chat-with-docs&quot; thành <strong>commodity</strong>: LangChain, LlamaIndex, API embedding ngày càng rẻ</td><td>Rào cản kỹ thuật từng là moat đã sụp — ai cũng dựng được bản &quot;đủ tốt&quot;</td></tr></tbody></table>
+<h3>1.3. Tác động quan sát được</h3>
+<table><thead><tr><th>Khía cạnh</th><th>Tác động</th></tr></thead><tbody><tr><td><strong>Adoption / usage</strong></td><td>Tính năng &quot;chat tài liệu + trích dẫn&quot; có sẵn ngay trong công cụ user <em>đã</em> trả tiền → user hỏi &quot;vì sao còn cần một app riêng?&quot;</td></tr><tr><td><strong>Pricing</strong></td><td>Bị ép giá: Big Tech bundle tính năng lõi gần như miễn phí / giá thấp so với giá specialist</td></tr><tr><td><strong>Doanh thu / ARR (rủi ro)</strong></td><td>Áp lực churn &amp; khó upsell khi khách nói &quot;đã có Copilot rồi&quot; — <em>điền số nội bộ thực tế nếu có</em></td></tr><tr><td><strong>Vị thế cạnh tranh</strong></td><td>Moat &quot;khó làm RAG bảo mật&quot; biến mất; entry point dịch về nơi user đang làm việc (Office/Workspace/Teams)</td></tr><tr><td><strong>Đối thủ phản ứng tốt hơn</strong></td><td><strong>Glean</strong> (enterprise AI search) định giá tăng mạnh 2024 (⚠️ verify số) → phân khúc không chết, mà tái cấu trúc về phía tích hợp sâu</td></tr></tbody></table>
+<h3>1.4. Bảng bằng chứng chốt</h3>
+<table><thead><tr><th>#</th><th>Bằng chứng / số liệu</th><th>Vì sao quan trọng</th><th>Nguồn (tự verify)</th></tr></thead><tbody><tr><td>E1</td><td>Microsoft 365 Copilot GA 01/11/2023, ~$30/user/tháng</td><td>Đối thủ chỉ bật switch trên user mình đang phục vụ</td><td><a href="https://www.microsoft.com/en-us/microsoft-365/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/" target="_blank" rel="noopener">Microsoft Blog</a> · <a href="https://www.cnbc.com/2023/09/21/microsoft-365-copilot-software-becomes-available-to-enterprises-nov-1.html" target="_blank" rel="noopener">CNBC</a></td></tr><tr><td>E2</td><td>ChatGPT Enterprise ra mắt 28/08/2023, có bảo mật doanh nghiệp</td><td>Phá lý do &quot;chỉ specialist mới an toàn cho data nội bộ&quot;</td><td><a href="https://openai.com/index/introducing-chatgpt-enterprise/" target="_blank" rel="noopener">OpenAI</a> · <a href="https://www.cnbc.com/2023/08/28/openai-chatgpt-enterprise-launches.html" target="_blank" rel="noopener">CNBC</a></td></tr><tr><td>E3</td><td>Google NotebookLM + Gemini Workspace, hỏi-đáp có trích dẫn</td><td>Đúng tính năng lõi sản phẩm đang bán, nay bundled</td><td><a href="https://blog.google/technology/ai/notebooklm-google-ai/" target="_blank" rel="noopener">Google Blog</a> · <a href="https://techcrunch.com/2023/12/08/googles-ai-assisted-notebooklm-note-taking-app-now-open-users-us/" target="_blank" rel="noopener">TechCrunch</a></td></tr><tr><td>E4</td><td>Glean (enterprise AI search): Series D $2.2B (đầu 2024) → Series E $4.6B + vượt $100M ARR (09/2024) → Series F $7.2B (06/2025)</td><td>Bằng chứng phân khúc tái cấu trúc, không xóa sổ — tiền dồn về lớp tích hợp sâu</td><td><a href="https://www.glean.com/blog/glean-series-d" target="_blank" rel="noopener">Glean</a> · <a href="https://www.cnbc.com/2024/09/10/ai-powered-search-startup-glean-doubles-valuation-in-new-funding-round.html" target="_blank" rel="noopener">CNBC</a> · <a href="https://techcrunch.com/2025/06/10/enterprise-ai-startup-glean-lands-a-7-2b-valuation/" target="_blank" rel="noopener">TechCrunch</a></td></tr><tr><td>E5</td><td>RAG thành commodity (LangChain/LlamaIndex, API rẻ)</td><td>Rào cản kỹ thuật — moat cũ — đã sụp</td><td><a href="https://www.llamaindex.ai/" target="_blank" rel="noopener">LlamaIndex</a> · <a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a></td></tr></tbody></table>
+<hr>
+<h2>Phần 2 — Phân tích</h2>
+<h3>Nhận định 1 — Trước AI, sản phẩm thắng nhờ giả định gì? JTBD là gì?</h3>
+<p>JTBD của user: <em>tìm đúng thông tin nội bộ thật nhanh và có bằng chứng đáng tin để dám hành động.</em> Sản phẩm thắng nhờ <strong>3 giả định</strong>: (a) dựng RAG + trích dẫn an toàn trên dữ liệu nội bộ là việc khó, cần vendor chuyên; (b) search keyword nội bộ truyền thống quá tệ nên có chỗ cho giải pháp tốt hơn; (c) user chấp nhận mở một app riêng để tra cứu. <em>Bằng chứng đỡ:</em> E5.</p>
+<h3>Nhận định 2 — Sau AI, kỳ vọng user đổi ở đâu? JTBD đổi thật hay chỉ đổi cách hoàn thành?</h3>
+<p><strong>JTBD không đổi</strong> — user vẫn cần &quot;tìm nhanh + có dẫn chứng để dám hành động&quot;. Cái đổi là <strong>cách hoàn thành job</strong> và <strong>kỳ vọng</strong>:</p>
+<ul><li>Dịch chuyển kỳ vọng mạnh nhất: <em>&quot;Làm xong giúp tôi — ngay trong nơi tôi đang làm việc&quot;</em>, không phải &quot;đưa tôi một app riêng để đi tra&quot;.</li><li>Competitive dynamic mạnh nhất: <strong>platform risk + build-copy cycle tăng tốc</strong> — Big Tech bước xuống app layer và copy tính năng lõi trong vài tháng.</li></ul>
+<p><em>Bằng chứng đỡ:</em> E1, E2, E3.</p>
+<h3>Nhận định 3 — Cục diện mới: ai thay thế ai? Phân khúc bị xóa sổ hay tái cấu trúc?</h3>
+<p>Phân khúc <strong>không bị xóa sổ mà bị tái cấu trúc</strong>. Lớp &quot;chat với tài liệu chung&quot; bị Big Tech nuốt nhờ phân phối sẵn có. Giá trị dịch từ <em>&quot;biết làm RAG&quot;</em> sang <em>&quot;tích hợp sâu hệ thống nội bộ + phân quyền chi tiết + chất lượng &amp; độ tin cậy của trích dẫn ở mức audit được + workflow chuyên ngành&quot;</em>. Giả định hết đúng: &quot;RAG + trích dẫn là việc khó nên phải mua specialist&quot;. <em>Bằng chứng đỡ:</em> E1, E4.</p>
+<h3>Nhận định 4 — Ai đang thắng trong phân khúc đó và thắng nhờ gì?</h3>
+<ul><li><strong>Big Tech (Microsoft/Google/OpenAI)</strong> thắng lớp phổ thông nhờ <strong>distribution</strong> — bán thêm trên user đã có sẵn, giá bundle.</li><li><strong>Glean và lớp enterprise-AI chuyên sâu</strong> thắng nhờ <strong>đi sâu</strong>: kết nối nhiều nguồn dữ liệu nội bộ, phân quyền theo người, chất lượng trả lời trên dữ liệu đặc thù — thứ Big Tech làm chưa tới.</li></ul>
+<p><em>Bằng chứng đỡ:</em> E4.</p>
+<hr>
+<h2>Verdict cuối</h2>
+<ol><li><strong>Case yếu đi vì:</strong> tính năng lõi (RAG + trích dẫn) bị Big Tech bundle vào công cụ user đã trả tiền → moat &quot;khó làm&quot; và entry point app-riêng biến mất.</li><li><strong>Điều thay đổi vĩnh viễn:</strong> hỏi-đáp-có-dẫn-chứng trở thành <strong>tiện ích mặc định trong luồng làm việc</strong>, không còn là một sản phẩm riêng để bán. Chuẩn mới trong đầu user là &quot;phải có sẵn ngay chỗ tôi đang làm&quot;.</li><li><strong>Cứu được không:</strong> <strong>Có, nhưng phải đổi rất mạnh</strong> — bỏ cạnh tranh ở &quot;chat tài liệu chung&quot; (thua về distribution), dồn moat sang <strong>tích hợp sâu hệ thống nội bộ + dữ liệu đặc thù + phân quyền + độ tin cậy trích dẫn audit-được</strong>. So với Glean, sản phẩm đang chậm ở distribution và độ sâu tích hợp.</li></ol>
+<p><strong>Bài học cho dự án của nhóm:</strong> khi giá trị lõi của bạn là thứ Big Tech có thể bundle, đừng dựng moat trên &quot;làm được tính năng đó&quot; — hãy dựng trên tích hợp sâu, dữ liệu đặc thù và niềm tin/độ kiểm chứng mà platform phổ thông không với tới.</p>
+<hr>
+<p><em>Lưu ý kiểm chứng trước khi nộp: bổ sung số liệu usage/ARR nội bộ thật của sản phẩm nếu có — đây là bằng chứng người chấm đánh giá cao nhất.</em></p>
+<hr>
+<h2>Nguồn tham khảo (đã đối chiếu)</h2>
+<p><strong>E1 — Microsoft 365 Copilot ($30/user/tháng, GA 01/11/2023)</strong></p>
+<ul><li>Microsoft 365 Blog (chính thức): https://www.microsoft.com/en-us/microsoft-365/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/</li><li>CNBC: https://www.cnbc.com/2023/09/21/microsoft-365-copilot-software-becomes-available-to-enterprises-nov-1.html</li></ul>
+<p><strong>E2 — ChatGPT Enterprise (ra mắt 28/08/2023)</strong></p>
+<ul><li>OpenAI (chính thức): https://openai.com/index/introducing-chatgpt-enterprise/</li><li>CNBC: https://www.cnbc.com/2023/08/28/openai-chatgpt-enterprise-launches.html</li><li>TechCrunch: https://techcrunch.com/2023/08/28/openai-launches-a-chatgpt-plan-for-enterprise-customers/</li></ul>
+<p><strong>E3 — Google NotebookLM / Gemini (hỏi-đáp trên tài liệu, có trích dẫn nguồn; GA Mỹ 12/2023)</strong></p>
+<ul><li>Google Blog (chính thức): https://blog.google/technology/ai/notebooklm-google-ai/</li><li>TechCrunch: https://techcrunch.com/2023/12/08/googles-ai-assisted-notebooklm-note-taking-app-now-open-users-us/</li></ul>
+<p><strong>E4 — Glean (định giá tăng nhanh; bằng chứng phân khúc tái cấu trúc)</strong></p>
+<ul><li>Glean Series D — $2.2B (chính thức): https://www.glean.com/blog/glean-series-d</li><li>CNBC — Series E, định giá $4.6B (09/2024): https://www.cnbc.com/2024/09/10/ai-powered-search-startup-glean-doubles-valuation-in-new-funding-round.html</li><li>TechCrunch — Series F, $7.2B (06/2025): https://techcrunch.com/2025/06/10/enterprise-ai-startup-glean-lands-a-7-2b-valuation/</li></ul>
+<p><strong>E5 — RAG / &quot;chat-with-docs&quot; thành commodity</strong></p>
+<ul><li>LlamaIndex: https://www.llamaindex.ai/</li><li>LangChain: https://www.langchain.com/</li></ul>
+</div></div>
+</body>
+</html>

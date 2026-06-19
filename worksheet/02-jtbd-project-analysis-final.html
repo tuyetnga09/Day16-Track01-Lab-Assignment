@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 2 — JTBD Project Analysis — Phạm Thị Tuyết Nga</title>
+<style>
+:root{--ink:#1f2933;--muted:#52606d;--line:#d9e2ec;--accent:#2563eb;--bg:#f7f9fc;--head:#0b2545}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple Color Emoji",sans-serif;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:48px 28px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:40px 44px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+h1{font-size:1.9rem;color:var(--head);margin:0 0 .3em;line-height:1.25}
+h2{font-size:1.35rem;color:var(--head);margin:2em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+h3{font-size:1.1rem;color:#102a43;margin:1.6em 0 .5em}
+p{margin:.7em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid var(--line);margin:1.8em 0}
+blockquote{margin:1em 0;padding:.7em 1.1em;background:#eef4ff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:#243b53}
+table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:.93rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#0b2545;color:#fff;font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:#f4f7fb}
+code{background:#eef1f5;padding:1px 6px;border-radius:5px;font-size:.88em;font-family:"SF Mono",Menlo,Consolas,monospace}
+ul,ol{margin:.6em 0;padding-left:1.5em}
+li{margin:.25em 0}
+em{color:var(--muted)}
+strong{color:#102a43}
+@media print{body{background:#fff}.card{border:none;box-shadow:none;padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<h1>Lab 2 — JTBD Project Analysis (bản hoàn thiện)</h1>
+<p><strong>Người làm:</strong> Phạm Thị Tuyết Nga — 2A202600877<br><strong>Track:</strong> AI Product Strategy<br><strong>Ngày:</strong> 19/06/2026<br><strong>Dự án / sản phẩm:</strong> Nền tảng <em>trung tâm tri thức nội bộ</em> — tập trung tài liệu của tập đoàn + chatbot hỏi-đáp có trích dẫn nguồn.</p>
+<blockquote>Quy tắc: không rõ job thì đừng bàn feature. Phân tích này nối tiếp Lab 1 — nơi kết luận moat phải dịch sang <em>trích dẫn audit-được + tích hợp sâu dữ liệu nội bộ</em>, thứ Copilot/Gemini phổ thông làm chưa tới.</blockquote>
+<hr>
+<h2>1. Project slice + Market context</h2>
+<h3>1.1. Lát cắt đã khoanh (Bước 0)</h3>
+<table><thead><tr><th>Điểm khoanh</th><th>Nội dung</th></tr></thead><tbody><tr><td><strong>1 nhóm người dùng</strong></td><td>Nhân viên tuyến đầu (CSKH / vận hành nghiệp vụ) — người trực tiếp tra quy định để xử lý công việc</td></tr><tr><td><strong>1 hoàn cảnh</strong></td><td>Đang xử lý một ca thực tế, cần biết <em>quy định/quy trình nội bộ nào áp dụng</em> — thường gấp, có khách hoặc deadline đứng chờ</td></tr><tr><td><strong>1 job cốt lõi</strong></td><td>Xác nhận đúng quy định áp dụng cho tình huống đang xử lý, đủ nhanh và đủ chắc để hành động</td></tr><tr><td><strong>1 workflow</strong></td><td>Hiểu ca → tìm văn bản đúng → chắc là bản còn hiệu lực → áp dụng → đóng ca</td></tr></tbody></table>
+<ul><li><strong>Dự án của nhóm tôi là:</strong> trung tâm tri thức nội bộ + chatbot hỏi-đáp có trích dẫn.</li><li><strong>Lát cắt tôi chọn:</strong> nhân viên tuyến đầu tra cứu quy định <em>ngay trong lúc xử lý một ca gấp</em>.</li><li><strong>Vì sao chọn lát cắt này:</strong> đây là tình huống job xuất hiện <em>dày đặc, có áp lực thời gian và rủi ro làm sai chính sách</em> — nơi giá trị &quot;nhanh + có dẫn chứng để dám hành động&quot; được cảm nhận rõ nhất.</li></ul>
+<h3>1.2. Market context</h3>
+<ol><li><strong>Ai đang gặp vấn đề:</strong> nhân viên tuyến đầu trong tập đoàn lớn, nơi quy định/quy trình nhiều, rải rác, hay cập nhật.</li><li><strong>Hoàn cảnh:</strong> đang phục vụ khách hoặc xử lý nghiệp vụ, gặp ca ngoại lệ/lần đầu, cần căn cứ ngay.</li><li><strong>Giải pháp thay thế hiện tại:</strong> hỏi đồng nghiệp/sếp, tự lục SharePoint/intranet bằng keyword, hỏi ChatGPT chung, hoặc đoán theo trí nhớ.</li><li><strong>Vì sao bây giờ đáng giải:</strong> LLM khiến hỏi-đáp-có-trích-dẫn trên tài liệu nội bộ trở nên khả thi &amp; &quot;đủ tốt&quot;; đồng thời (Lab 1) Big Tech đang bundle tính năng này, nên phải thắng bằng độ tin &amp; tích hợp sâu, không phải bằng &quot;có chatbot&quot;.</li></ol>
+<blockquote><strong>Tóm tắt market context:</strong> Nhân viên tuyến đầu phải ra quyết định đúng-quy-định dưới áp lực thời gian, trong khi tri thức nội bộ phân mảnh và hay thay đổi. Họ đang chắp vá bằng cách hỏi người và lục tay — chậm, không nhất quán, rủi ro áp dụng bản đã hết hiệu lực.</blockquote>
+<hr>
+<h2>2. Job Executor + Core JTBD</h2>
+<h3>2.1. Job executor</h3>
+<ul><li><strong>Job executor:</strong> <strong>Nhân viên tuyến đầu (CSKH / vận hành nghiệp vụ)</strong> — người trực tiếp tra cứu để xử lý ca.</li><li><strong>Vì sao là người này (không phải buyer):</strong> IT/lãnh đạo khối là người <em>mua</em>, nhưng người <em>trực tiếp &quot;thuê&quot; giải pháp để hoàn thành job</em> là nhân viên đang cần căn cứ ngay tại chỗ. Job thành/bại đo ở họ.</li></ul>
+<h3>2.2. Core JTBD</h3>
+<blockquote><strong>Xác nhận đúng quy định/thông tin nội bộ áp dụng cho tình huống đang xử lý, đủ nhanh và đủ chắc để hành động ngay tại chỗ.</strong></blockquote>
+<p><strong>Tự kiểm 3 tiêu chí:</strong></p>
+<ul><li>✅ Bỏ tool đi job vẫn còn (nhân viên vẫn phải tra đúng quy định để làm việc).</li><li>✅ Không có tên sản phẩm / AI / chatbot / app / màn hình trong câu.</li><li>✅ Mô tả điều user muốn hoàn thành (ra quyết định đúng &amp; tự tin), không phải thứ product làm.</li></ul>
+<hr>
+<h2>3. Ba Job Stories</h2>
+<table><thead><tr><th>#</th><th>When (trigger)</th><th>I want to (motivation)</th><th>So I can (outcome)</th><th>Story cho thấy điều gì</th></tr></thead><tbody><tr><td>JS1</td><td>đang trên điện thoại với khách, gặp ca ngoại lệ về chính sách (hoàn tiền/bảo hành)</td><td>tìm ngay điều khoản áp dụng và biết nó nằm ở văn bản nào</td><td>trả lời dứt khoát mà không hứa sai chính sách</td><td>job xuất hiện realtime, áp lực cao → tốc độ + dẫn chứng là sống còn</td></tr><tr><td>JS2</td><td>mới onboarding, lần đầu gặp một nghiệp vụ</td><td>nắm đúng các bước bắt buộc và ngoại lệ của quy trình</td><td>làm đúng ngay từ lần đầu, không phải đi hỏi vòng quanh</td><td>đối thủ thật là &quot;hỏi đồng nghiệp&quot; → phải nhanh và đáng tin hơn người</td></tr><tr><td>JS3</td><td>nghe quy định vừa được cập nhật</td><td>chắc mình đang đọc đúng phiên bản mới nhất</td><td>không áp dụng nhầm chính sách đã hết hiệu lực</td><td>&quot;đúng phiên bản/hiệu lực&quot; là pain riêng, Big Tech generic hay bỏ sót</td></tr></tbody></table>
+<hr>
+<h2>4. Current Alternatives + JTBD Lite Map</h2>
+<h3>4.1. Current alternatives</h3>
+<table><thead><tr><th>Alternative</th><th>User thuê nó để làm gì</th><th>Làm tốt gì</th><th>Fail ở đâu</th><th>Switching cost</th></tr></thead><tbody><tr><td>Hỏi đồng nghiệp / sếp</td><td>lấy câu trả lời kèm ngữ cảnh nhanh</td><td>có kinh nghiệm, hiểu ca</td><td>làm phiền người khác, không phải lúc nào cũng có, tam sao thất bản</td><td>Thấp</td></tr><tr><td>Lục SharePoint/intranet bằng keyword</td><td>tự tìm văn bản gốc</td><td>luôn sẵn, là nguồn chính thống</td><td>kết quả nhiễu, không biết bản mới/cũ, tốn thời gian</td><td>Thấp</td></tr><tr><td>ChatGPT / Gemini chung</td><td>hỏi nhanh cho tiện</td><td>diễn đạt mượt</td><td>không có data nội bộ, dễ bịa, không trích nguồn nội bộ, rủi ro bảo mật</td><td>Thấp</td></tr><tr><td>Đoán theo trí nhớ / không làm gì</td><td>xử lý cho nhanh</td><td>nhanh nhất</td><td>rủi ro sai chính sách cao nhất</td><td>Thấp</td></tr></tbody></table>
+<blockquote><strong>Nếu project biến mất hôm nay, user quay về:</strong> chủ yếu <strong>hỏi đồng nghiệp</strong> + <strong>lục keyword</strong> — nhanh nhưng chậm hơn, kém nhất quán và dễ dùng nhầm bản cũ.</blockquote>
+<h3>4.2. JTBD Lite Map (workflow xác nhận quy định áp dụng)</h3>
+<table><thead><tr><th>Step</th><th>User đang cố làm gì</th><th>Hôm nay dùng gì</th><th>Friction / pain</th><th>Mức đau</th></tr></thead><tbody><tr><td>Define</td><td>hiểu ca cần loại quy định nào</td><td>tự suy luận</td><td>đôi khi không biết mình cần tra gì</td><td>Med</td></tr><tr><td><strong>Locate</strong></td><td><strong>tìm đúng văn bản/đoạn áp dụng</strong></td><td><strong>keyword search / hỏi người</strong></td><td><strong>nhiễu kết quả, mất thời gian, dễ trật</strong></td><td><strong>High</strong></td></tr><tr><td>Prepare</td><td>gom &amp; đối chiếu các điều khoản liên quan</td><td>mở nhiều file cùng lúc</td><td>rời rạc, dễ sót điều kiện kèm theo</td><td>Med</td></tr><tr><td><strong>Confirm</strong></td><td><strong>chắc đây là bản mới nhất, đúng ngữ cảnh</strong></td><td><strong>đoán theo trí nhớ / hỏi lại</strong></td><td><strong>không có dấu hiệu phiên bản/hiệu lực rõ</strong></td><td><strong>High</strong></td></tr><tr><td>Execute</td><td>áp dụng / trả lời khách</td><td>nói/nhập trực tiếp</td><td>nếu bước trên sai thì sai theo</td><td>Med</td></tr><tr><td>Monitor</td><td>soát ngoại lệ, điều kiện kèm</td><td>tự nhớ</td><td>dễ bỏ sót case đặc thù</td><td>Med</td></tr><tr><td>Modify</td><td>điều chỉnh cho ca đặc thù</td><td>hỏi cấp trên</td><td>chậm, phụ thuộc người</td><td>Low/Med</td></tr><tr><td>Conclude</td><td>đóng ca, lưu căn cứ đã dùng</td><td>ghi tay / bỏ qua</td><td>thiếu vết để audit về sau</td><td>Low/Med</td></tr></tbody></table>
+<p><strong>Bước đau nhất #1:</strong> <strong>Locate</strong> — tìm đúng đoạn trong kho phân mảnh. <strong>Bước đau nhất #2:</strong> <strong>Confirm</strong> — chắc chắn đang dùng bản còn hiệu lực.</p>
+<blockquote><strong>Vì sao đây là nơi đáng chú ý nhất:</strong> Đa số thời gian và rủi ro dồn vào Locate + Confirm. Sai ở hai bước này dẫn thẳng tới <em>áp dụng sai chính sách</em> — hậu quả nặng nhất trong môi trường tuân thủ. Đây cũng đúng JTBD lõi: &quot;nhanh + chắc&quot;.</blockquote>
+<hr>
+<h2>5. AI Leverage Point + Product Hypothesis</h2>
+<h3>5.1. AI leverage point</h3>
+<table><thead><tr><th>Step</th><th>AI giúp bằng cách nào</th><th>Vì sao AI hợp ở đây</th><th>Rủi ro chính</th></tr></thead><tbody><tr><td><strong>Locate</strong></td><td>hiểu ngữ nghĩa câu hỏi → trả lời kèm <strong>trích dẫn đúng đoạn/văn bản nguồn</strong></td><td>search ngữ nghĩa + tổng hợp là đúng thế mạnh LLM; thay thế trực tiếp việc lục keyword &amp; hỏi người</td><td>AI bịa hoặc trỏ sai đoạn → mất niềm tin</td></tr><tr><td><strong>Confirm</strong></td><td>gắn <strong>metadata phiên bản/hiệu lực</strong>, cảnh báo bản cũ, luôn dẫn nguồn để user tự kiểm</td><td>đây là điểm Big Tech generic làm yếu → cơ hội tạo moat</td><td>nếu metadata hiệu lực sai → user áp dụng nhầm</td></tr></tbody></table>
+<blockquote><strong>AI leverage point quan trọng nhất:</strong> trả lời ở bước <strong>Locate</strong> <em>bắt buộc kèm trích dẫn đoạn nguồn</em>, và ở <strong>Confirm</strong> <em>gắn cảnh báo phiên bản/hiệu lực</em>.<br><strong>Vì sao không phải bước khác:</strong> Execute/Conclude pain thấp hơn và đã có cách làm chấp nhận được; nhồi AI vào đó không đổi được kết quả job.</blockquote>
+<h3>5.2. Product hypothesis</h3>
+<blockquote><strong>Nếu</strong> giúp <strong>nhân viên tuyến đầu</strong> xác nhận đúng quy định ở bước <strong>Locate + Confirm</strong>, <strong>bằng cách</strong> trả lời có <em>trích dẫn đoạn nguồn</em> + <em>cảnh báo phiên bản hiệu lực</em>, <strong>thì</strong> họ sẽ chuyển từ <em>&quot;hỏi đồng nghiệp / lục keyword&quot;</em> sang dùng sản phẩm, <strong>vì</strong> nhanh hơn và <strong>chắc hơn</strong> — dám hành động ngay mà không sợ áp dụng sai chính sách.</blockquote>
+<p><strong>Tín hiệu sớm nếu hypothesis đúng:</strong></p>
+<ol><li>Tỷ lệ câu trả lời được user mở link trích dẫn để xác nhận tăng (tin &amp; dùng được).</li><li>Giảm số lần &quot;hỏi đồng nghiệp/sếp&quot; cho cùng loại nghiệp vụ; thời gian xử lý ca giảm.</li></ol>
+<hr>
+<h2>6. Assumptions to Validate + Verdict</h2>
+<h3>6.1. Assumptions</h3>
+<table><thead><tr><th>#</th><th>Assumption</th><th>Vì sao rủi ro</th><th>Bằng chứng đang có</th><th>Validate tiếp thế nào</th></tr></thead><tbody><tr><td>A1</td><td>Đúng job executor là nhân viên tuyến đầu (không phải knowledge manager)</td><td>nếu sai, cả workflow vẽ sai</td><td>quan sát định tính</td><td>phỏng vấn 5–7 nhân viên tuyến đầu</td></tr><tr><td>A2</td><td>Pain Locate/Confirm đủ đau &amp; đủ thường xuyên</td><td>nếu hiếm, không đáng làm</td><td>giả định</td><td>đo tần suất tra cứu/ca, thời gian trung bình mỗi lần</td></tr><tr><td>A3</td><td>User sẽ bỏ thói quen &quot;hỏi đồng nghiệp&quot;</td><td>thói quen xã hội rất dính</td><td>chưa có</td><td>thử nghiệm có giám sát, đo tỷ lệ chuyển đổi hành vi</td></tr><tr><td>A4</td><td>AI trích dẫn đủ chính xác để user tin</td><td>citation sai làm sập niềm tin</td><td>chưa đo</td><td>đo precision của trích dẫn trên bộ câu hỏi thật</td></tr><tr><td>A5</td><td>User đủ tin để hành động dựa trên câu trả lời trong môi trường tuân thủ</td><td>rủi ro pháp lý/chính sách</td><td>chưa có</td><td>A/B có vs không có cảnh báo hiệu lực; khảo sát mức độ tin</td></tr></tbody></table>
+<h3>6.2. Assumption nguy hiểm nhất</h3>
+<blockquote><strong>A4 + A5 — niềm tin vào trích dẫn.</strong> Nếu user không tin trích dẫn đủ để bỏ việc đọc bản gốc / hỏi người, toàn bộ hypothesis sập. Đây <em>cũng chính là moat</em> đã chỉ ra ở Lab 1: thắng Big Tech không bằng &quot;có chatbot&quot; mà bằng <em>độ tin &amp; tính audit-được của câu trả lời trên dữ liệu nội bộ</em>.</blockquote>
+<h3>6.3. Verdict cuối (version nộp)</h3>
+<ul><li><strong>Job executor:</strong> nhân viên tuyến đầu (CSKH / vận hành) trực tiếp tra quy định để xử lý ca.</li><li><strong>Core JTBD:</strong> xác nhận đúng quy định áp dụng cho tình huống đang xử lý, đủ nhanh và đủ chắc để hành động ngay.</li><li><strong>2 bước đau nhất:</strong> Locate (tìm đúng đoạn) + Confirm (đúng phiên bản/hiệu lực).</li><li><strong>AI leverage point chính:</strong> trả lời ở Locate kèm trích dẫn đoạn nguồn + cảnh báo hiệu lực ở Confirm.</li><li><strong>Product hypothesis:</strong> giúp Locate + Confirm có dẫn chứng &amp; cảnh báo phiên bản → user rời &quot;hỏi người/lục keyword&quot; vì nhanh hơn và chắc hơn.</li><li><strong>Assumption cần validate đầu tiên:</strong> A4 — độ chính xác &amp; độ tin của trích dẫn (đo precision citation trên câu hỏi thật).</li></ul>
+<hr>
+<p><em>Câu hỏi khó tự kiểm (theo playbook): nếu bỏ AI đi, job &quot;xác nhận đúng quy định để dám hành động&quot; vẫn còn — nên đây là job thật, không phải chỗ nhét AI. AI chỉ là cách hoàn thành job nhanh &amp; chắc hơn ở Locate + Confirm.</em></p>
+</div></div>
+</body>
+</html>
